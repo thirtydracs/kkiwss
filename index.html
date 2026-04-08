@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Weekly Snapshot — Construction Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       Fixed top bar showing the app name and subtitle.
+  ============================================================ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="header-title">K&amp;K Industries</div>
+        <div class="header-subtitle">Multi-Job Weekly Site Position</div>
+      </div>
+      <div class="header-week" id="banner-week">Loading...</div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       Contains both pages. Only one is visible at a time.
+  ============================================================ -->
+  <main>
+
+    <!-- ====================================================
+         PAGE 1 — PORTFOLIO DASHBOARD
+    ==================================================== -->
+    <div id="page-dashboard" class="page main-content">
+
+      <!-- KPI Strip -->
+      <section class="kpi-strip" aria-label="Key Performance Indicators">
+
+        <div class="kpi-card">
+          <div class="kpi-label">Total Jobs</div>
+          <div class="kpi-value" id="kpi-total">—</div>
+        </div>
+
+        <div class="kpi-card kpi-on-track">
+          <div class="kpi-label">On Track</div>
+          <div class="kpi-value" id="kpi-ontrack">—</div>
+        </div>
+
+        <div class="kpi-card kpi-watch">
+          <div class="kpi-label">Watch</div>
+          <div class="kpi-value" id="kpi-watch">—</div>
+        </div>
+
+        <div class="kpi-card kpi-at-risk">
+          <div class="kpi-label">At Risk</div>
+          <div class="kpi-value" id="kpi-atrisk">—</div>
+        </div>
+
+        <div class="kpi-card kpi-delayed">
+          <div class="kpi-label">Delayed</div>
+          <div class="kpi-value" id="kpi-delayed">—</div>
+        </div>
+
+        <div class="kpi-card kpi-blind">
+          <div class="kpi-label">Data Gaps</div>
+          <div class="kpi-value" id="kpi-blind">—</div>
+        </div>
+
+      </section>
+
+      <!-- KPI updated timestamp -->
+      <div class="kpi-updated" id="kpi-updated-date"></div>
+
+      <!-- Manager Summary -->
+      <section class="summary-section" aria-label="Manager Summary">
+        <div class="summary-title">Manager Summary</div>
+        <div class="summary-grid" id="summary-grid">
+          <!-- Populated by app.js -->
+        </div>
+      </section>
+
+      <!-- Search + Filters -->
+      <div class="controls-bar">
+
+        <!-- Search -->
+        <div class="search-wrapper">
+          <span class="search-icon">&#128269;</span>
+          <input
+            type="search"
+            class="search-input"
+            id="search-input"
+            placeholder="Search by project or builder..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Status Filters -->
+        <div class="filter-buttons" role="group" aria-label="Filter by status">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="On Track">On Track</button>
+          <button class="filter-btn" data-filter="Watch">Watch</button>
+          <button class="filter-btn" data-filter="At Risk">At Risk</button>
+          <button class="filter-btn" data-filter="Delayed">Delayed</button>
+          <button class="filter-btn" data-filter="Blind Spot">Data Gap</button>
+        </div>
+
+      </div>
+
+      <!-- Section Heading -->
+      <div class="section-heading">
+        Jobs <span id="jobs-count"></span>
+      </div>
+
+      <!-- Job Cards Grid -->
+      <section class="jobs-grid" id="jobs-grid" aria-label="Job Cards">
+        <!-- Populated by app.js -->
+      </section>
+
+    </div>
+    <!-- end page-dashboard -->
+
+
+    <!-- ====================================================
+         PAGE 2 — JOB DETAIL VIEW
+    ==================================================== -->
+    <div id="page-detail" class="page main-content">
+      <div class="detail-page" id="detail-content">
+        <!-- Populated by app.js when a job is opened -->
+      </div>
+    </div>
+    <!-- end page-detail -->
+
+  </main>
+
+  <!-- ============================================================
+       SCRIPTS
+       Load data first, then the app logic.
+  ============================================================ -->
+  <script src="/data.js"></script>
+  <script src="/app.js"></script>
+
+<script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="x643n54izav7" data-repl-id="0abd2034-aa3b-4165-87f7-24c1229668a4"></script></body>
+</html>
+
